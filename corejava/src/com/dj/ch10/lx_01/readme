@@ -1,0 +1,25 @@
+1.写OwnException类，要求继承Exception类
+
+写OwnExceptionSource类，要求包含方法a()，a()抛出OwnException
+
+写OwnExceptionHandler类，要求包含main()，在main()中调用OwnExceptionSource类的a()，并处理相关异常
+
+---------------------------------------------
+2.写DivisionByZero类，包含
+1. division()：要求执行10/0操作，并使用异常处理机制处理产生的异常
+2. main()：调用division()
+3. 修改division()：执行10/0不变，但不在方法中处理产生的异常，改将异常抛出
+4. 修改main()：调用division()并处理其抛出的异常
+
+---------------------
+3.修改TestException.java，要求如下：
+在命令行输入参数不能满足输出要求时，会抛出相应异常，使用异常处理机制处理抛出的异常。
+-----------------------------------------
+4.使用断言:
+public static void main(String[] args){
+
+}
+运行主函数的时候给它传参数，要求参数个数必须是俩个
+要求:
+关闭断言的时候不报错
+开启断言的时候报错

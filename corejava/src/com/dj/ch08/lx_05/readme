@@ -1,0 +1,6 @@
+
+写MyStack类，实现堆栈功能。在类中使用ArrayList保存数据。
+
+写MyQueue类，实现队列功能。在类中使用ArrayList保存数据。
+
+使用Test.java测试堆栈和队列
