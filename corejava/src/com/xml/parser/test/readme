@@ -1,0 +1,40 @@
+1  使用dom   dom4j 原样打印一下xml内容
+ 解析
+<?xml version='1.0' encoding='UTF-8'?>
+<school name="jxut">
+	<teachers>
+		<teacher id="1001">
+			<name firstname="三" lastname="张">
+			</name>
+		</teacher>
+		<teacher id="1002">
+			<name firstname="四" lastname="李">
+			</name>
+		</teacher>
+	</teachers>
+	<students>
+		<student num="20120103">
+			<name>王五</name>
+			<gender>男</gender>
+		</student>
+	</students>
+</school>
+
+2  使用dom   dom4j  创建一下内容
+
+	<briup postion="昆山浦东软件园">
+		<ceo gender="male">
+			larry
+		</ceo>
+		<cfo gender="female">
+			xue
+		</cfo>
+		<cto gender="male">
+			kiven
+		</cto>
+	</briup>
+
+
+
+
+

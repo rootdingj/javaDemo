@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE books[
+	<!ENTITY briup "昆山杰普科技有限公司">
+	<!ENTITY test "中国人民银行">
+]>
+<books>
+	<boos>自定义实体</boos>
+	<boos>briup</boos>
+	<boos>&briup;</boos>
+	<boos>&test;</boos>
+	<boos><![CDATA[&briup;]]></boos>
+</books>

@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE students SYSTEM "a.dtd">
+<students>
+	<student id="">
+		
+		<name firstName="">
+			昆山杰普
+		</name>
+		
+		<age xuAge="20"></age>
+		<score sel="60"></score>	
+		<score sel="60"></score>	
+		<score sel="60"></score>	
+	</student>
+</students>
+
+<!-- The content of element type "students" is incomplete, it must match 
+"(student)+".
+    标签
+	<!ELEMENT students (student+, , )>
+	修饰 标签的语法
+	<!ELEMENT 标签名 规则>
+      1 给子标签定义规则
+      	* 出现的顺序，子标签从上而下出现的顺序
+      2 #PCDATA  在DTD中约束过的内容，才能出现到xml中
+      
+     属性
+     
+     <!ATTLIST student id CDATA #REQUIRED>
+      
+     <!ATTLIST 标签名 属性名 值的类型 出现的规则>
+      Attribute "id" is required 
+      and must be specified for element type 
+ "student".
+      
+      1 值的类型    CDATA        文本内容
+      		  ( 值1|值2 |值3 )   枚举类型 
+      
+      2  出现的规则  #REQUIRED   属性必须出现
+      			   #IMPLIED    可以出现也可以不出现
+      			   #FIXED "值"   属性可以出现也可以不出现
+      			   			如果出现，属性值必须匹配 #FIXED关键字后的值
+      
+ -->

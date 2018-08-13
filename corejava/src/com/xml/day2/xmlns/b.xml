@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 这里这个table表示 桌子 的意思 -->
+<table xmlns=""
+			xmlns:zm="src/com/xml/day2/xmlns/a.xml"
+			xmlns:zt="src/com/xml/day2/xmlns/b.xml">
+			<zm:size>100*100</zm:size>
+			<zt:size>10*10</zt:size>
+			<zm:color>red</zm:color>
+			<zt:color>blue</zt:color>
+</table>
+
+
+
+

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE students SYSTEM "a.dtd">
+<students>
+	<student id="">
+		<name firstName="briup"></name>
+		<age xuAge="20"></age>
+		<score sel="60"></score>
+	</student>
+</students>
+
+<!-- 
+ 	1  xml必须被dtd或者schame 约束
+ 	2  拿到dtd文件，或者xsd文件
+	3  window－－－>preference
+	<!ELEMENT 被约束元素 约束规则>
+	<!ATTLIST 被约束的元素 被约束的属性 属性值的类型 属性出现规则（＃FIXED 匹配的值>
+the content of element type "students" is incomplete, it must match "(student)
+ +". 
+ The content of element type "student" is incomplete, it must match 
+ "(name,age?,score*)".
+ 
+ Attribute "id" is required and must be specified for element type 
+ "student".
+ -->

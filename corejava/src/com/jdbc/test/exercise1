@@ -1,0 +1,21 @@
+作业：
+
+创建一张表xxx_user(id,name,age...)
+create table jdbc_user(
+	id number(12) primary key,
+	name varchar2(16),
+	age number(4)
+);
+
+通过jdbc：
+1)向表中插入10条记录
+insert into jdbc_user values(?,?,?)
+
+2)将id=2的名字该为IBM
+update jdbc_user set name = 'IBM' where id = 2
+
+3)删除id=5的记录
+delete from jdbc_user where id = 5;
+
+4)查询所有记录信息，打印在控制台上
+5)数据库连接相关的信息(driver、url、user、password)写在文件中db.properties

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE empoyees [
+	<!ENTITY company "***公司**号地址">
+	<!ELEMENT empoyee (name,age,depName,salary,company,gender,country)>
+		<!ATTLIST empoyee id ID #REQUIRED>
+	<!ELEMENT name (#PCDATA)>
+		<!ATTLIST name last_name CDATA  #IMPLIED>
+	<!ELEMENT age (#PCDATA)>
+		<!ATTLIST age age CDATA  "20">
+	<!ELEMENT depName (#PCDATA)>
+		<!ATTLIST depName dep (市场部|教学部|教学管理部) #REQUIRED>
+	<!ELEMENT salary (#PCDATA)>
+		<!ATTLIST salary sal CDATA #IMPLIED>
+	<!ELEMENT gender (#PCDATA)>
+		<!ATTLIST gender sex  CDATA  "male">
+	<!ELEMENT country (#PCDATA)>
+		<!ATTLIST country country CDATA #FIXED "中国">
+	<!-- <!ENTITY addr SYSTEM "test.xml">		 -->
+]>
+<empoyees>
+	<empoyee id="s1">
+		<name last_name="cds"></name>
+		<age age="34"></age>
+		<depName dep="教学部"></depName>
+		<salary></salary>
+		<company>&company;</company>
+		<gender></gender>
+		<country></country>
+	</empoyee>
+	<empoyee id="s2">
+		<name></name>
+		<age age="23"></age>
+		<depName dep="教学部"></depName>
+		<salary sal="4000"></salary>
+		<company>&company;</company>
+		<gender sex="fmale"></gender>
+		<country></country>
+	</empoyee>
+</empoyees>

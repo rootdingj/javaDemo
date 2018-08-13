@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE leader  [
+				 <!ELEMENT leader (CEO,CFO,CTO) >
+				 <!ELEMENT CEO (#PCDATA |name|age|gender)* >
+				 <!ELEMENT CFO (#PCDATA |name|age|gender)* >
+				 <!ELEMENT CTO (#PCDATA |name|age|gender)* > 
+				 ]>
+<leader>
+	<CEO>
+		<name>Larry Zhao</name>
+		<age>50</age>
+		<gender>false</gender>
+	</CEO> 
+	<CFO>
+		<name>xue</name>
+		<age>46</age>
+		<gender>女</gender>
+	</CFO>
+	<CTO>
+		<name>ding</name>
+		<age>45</age>
+		<gender>男</gender>
+	</CTO>
+</leader>

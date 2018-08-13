@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding= 'utf-8'  ?>
+<leader>
+<CEO  gender="male">
+Larry Zhao
+</CEO> 
+<CFO  gender="female">
+xue
+</CFO>
+<CTO  gender="male">
+ding
+</CTO>
+</leader>

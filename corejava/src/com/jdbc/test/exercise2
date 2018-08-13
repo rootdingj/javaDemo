@@ -1,0 +1,46 @@
+1,JDBC编程的六个步骤是什么？
+注册驱动--连接数据库--创建语句--执行语句--处理结果集--关闭JDBC对象
+
+2.注册Driver的三种方式
+ Class.forName("oracle.jdbc.OracleDriver");
+ DriverManager.registerDriver(new OracleDriver);
+ -DjdbcDrivers=oracle.jdbc.OracleDriver
+ 使用高版本的JDBC
+ 
+3.阅读以下程序
+ class OracleDriver implements Driver{ 
+ 	//1、在静态代码块中注册驱动
+     static{   
+        OracleDriver d=new OracleDriver(); 
+        DriverManager.registerDriver(d); 
+     } 
+  } 
+  
+  class DriverManager{ 
+     private static List<Driver> dri=new ArrayList<Driver>(); 
+     public static void registerDriver(Driver d){ 
+        ...... 
+        dri.add(d); 			
+     } 
+     public static Connection getConnection(){ 
+        for(Driver d:dri){  
+           if(d!=null)  return d.connect();  
+        } 
+     }
+请描述一下对上面代码的意义.
+	模拟注册驱动程序，数据库连接的连接池
+
+5.boolean execute(sql),请写出此boolean值的意义是什么?
+检索当前的执行的结果集，而且当前的结果集是为空或者是唯一的结果集
+  
+6. executeQuery(sql)方法的返回值是何类型?
+	ResultSet
+7. executeUpdate(sql)方法的返回值是何类型?返回值的意义是什么?
+int类型，更新数据库中信息的条数
+8. 请简述一下Statement 和 PreparedStatement之间的区别.
+	statement发送完整的sql语句到数据库,不是直接执行而是有数据库先编译在执行
+	prepareStatement是先发送带参数的sql语句，再发送一组参数值。
+	如果同构的sql语句，p的效率要比s的高；而对于异构的sql两者的效率差不多
+
+
+ 
