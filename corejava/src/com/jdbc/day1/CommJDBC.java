@@ -19,27 +19,27 @@ public class CommJDBC {
 		ResultSet rs = null;
 		
 		try {
-			//1¡¢¼ÓÔØÇı¶¯³ÌĞò(oracleÇı¶¯) 
+			//1ã€åŠ è½½é©±åŠ¨ç¨‹åº(oracleé©±åŠ¨) 
 				//1
 //			Class.forName("oracle.jdbc.OracleDriver");
 				//2
 			OracleDriver driver = new OracleDriver();
 			DriverManager.registerDriver(driver);
-				//3¡¢VM arguments
-			//-D:ÏµÍ³ÔËĞĞ±äÁ¿
+				//3ã€VM arguments
+			//-D:ç³»ç»Ÿè¿è¡Œå˜é‡
 			//-Djdbc.drivers=oracle.jdbc.OracleDriver
-				//4¡¢Ê¹ÓÃ¸ß°æ±¾µÄjdbc
-			//2¡¢½¨Á¢Á¬½Ó
+				//4ã€ä½¿ç”¨é«˜ç‰ˆæœ¬çš„jdbc
+			//2ã€å»ºç«‹è¿æ¥
 			conn = DriverManager.getConnection(url, user, password);
 			System.out.println(conn);
-			//3¡¢´´½¨Óï¾ä
+			//3ã€åˆ›å»ºè¯­å¥
 			stm = conn.createStatement();
 			System.out.println(stm);
-			//4¡¢Ö´ĞĞÓï¾ä
+			//4ã€æ‰§è¡Œè¯­å¥
 			String sql1 = "select sysdate from s_region";
 			rs = stm.executeQuery(sql1);
 			System.out.println("------------"+stm.executeUpdate(sql1));
-			//5¡¢´¦Àí½á¹û¼¯
+			//5ã€å¤„ç†ç»“æœé›†
 			while(rs.next()){
 				System.out.println("..............."+rs.getDate(1));
 			}
@@ -47,7 +47,7 @@ public class CommJDBC {
 			e.printStackTrace();
 		}finally {
 			try {
-				//6¡¢¹Ø±Õ(Ë³Ğò·´×ÅÀ´)
+				//6ã€å…³é—­(é¡ºåºåç€æ¥)
 				if(rs!=null)rs.close();
 				if(stm!=null)stm.close();
 				if(conn!=null)conn.close();

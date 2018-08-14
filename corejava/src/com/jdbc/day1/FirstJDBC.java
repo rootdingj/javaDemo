@@ -12,7 +12,7 @@ import java.util.GregorianCalendar;
 public class FirstJDBC {
 	
 	public static void main(String[] args) {
-		//"jdbc¼¼Êõ:³§ÉÌ:×ÓĞ­Òé£º@µØÖ·£º¶Ë¿Ú£ºÊı¾İ¿â°æ±¾(xe:oracle¼ò»¯°æ,orclÍêÕû°æ)"
+		//"jdbcæŠ€æœ¯:å‚å•†:å­åè®®ï¼š@åœ°å€ï¼šç«¯å£ï¼šæ•°æ®åº“ç‰ˆæœ¬(xe:oracleç®€åŒ–ç‰ˆ,orclå®Œæ•´ç‰ˆ)"
 		String url = "jdbc:oracle:thin:@localhost:1521:xe";
 		String user = "dj";
 		String password = "dj";
@@ -22,34 +22,34 @@ public class FirstJDBC {
 		PreparedStatement pstm = null;
 		
 		try {
-			//1¡¢×¢²áÇı¶¯(oracleÇı¶¯) 
-			/*OracleDriver:ojdbc14.jarÖĞµÄÒ»¸öÀà,ÕâÒ»ÀàÀàÓÉjdbcÊ¹ÓÃ£¬²»ÓÉ³ÌĞòÔ±Ê¹ÓÃ;
-			 * µ±ÄãµÄ³ÌĞòÖĞÃ÷È·Ê¹ÓÃÆäÖĞµÄÄ³¸öÀàÊ±£¬»á±»JVM×Ô¶¯¼ÓÔØ;
-			 * µ«ÊÇÔÚ³ÌĞòÖĞ²»ÏÔÊ¾µÄÊ¹ÓÃÇı¶¯³ÌĞòÀà,Òò´Ë£¬±ØĞë±àĞ´´úÂë¸æËßJVM¼ÓÔØËûÃÇ
+			//1ã€æ³¨å†Œé©±åŠ¨(oracleé©±åŠ¨) 
+			/*OracleDriver:ojdbc14.jarä¸­çš„ä¸€ä¸ªç±»,è¿™ä¸€ç±»ç±»ç”±jdbcä½¿ç”¨ï¼Œä¸ç”±ç¨‹åºå‘˜ä½¿ç”¨;
+			 * å½“ä½ çš„ç¨‹åºä¸­æ˜ç¡®ä½¿ç”¨å…¶ä¸­çš„æŸä¸ªç±»æ—¶ï¼Œä¼šè¢«JVMè‡ªåŠ¨åŠ è½½;
+			 * ä½†æ˜¯åœ¨ç¨‹åºä¸­ä¸æ˜¾ç¤ºçš„ä½¿ç”¨é©±åŠ¨ç¨‹åºç±»,å› æ­¤ï¼Œå¿…é¡»ç¼–å†™ä»£ç å‘Šè¯‰JVMåŠ è½½ä»–ä»¬
 			 * */
 			Class.forName("oracle.jdbc.OracleDriver");
-			//2¡¢½¨Á¢Êı¾İ¿âÁ¬½Ó
+			//2ã€å»ºç«‹æ•°æ®åº“è¿æ¥
 			conn = DriverManager.getConnection(url, user, password);
 			System.out.println(conn);
-			//3¡¢´´½¨Óï¾ä
-			//Ô¤±àÒë
+			//3ã€åˆ›å»ºè¯­å¥
+			//é¢„ç¼–è¯‘
 /*			pstm = conn.prepareStatement("insert into s_region(id,name) values(?,?)");
 			for(int i=25;i<30;i++){
 				pstm.setLong(1,100+i);
-				pstm.setString(2, "³¯ÏÊ"+121);
+				pstm.setString(2, "æœé²œ"+121);
 				pstm.executeUpdate(); 
 			}*/
 			stm = conn.createStatement();
-			//4¡¢Ö´ĞĞÓï¾ä
+			//4ã€æ‰§è¡Œè¯­å¥
 			String sql = "select id,name from s_region";
 			rs = stm.executeQuery(sql);
 			stm.execute(sql);
-			stm.execute("insert into s_region values(11,'ÖĞ¹ú')");
+			stm.execute("insert into s_region values(11,'ä¸­å›½')");
 //			stm.executeUpdate("create table temp1(col1 number(12),clo2 varchar2(20))");
-			//5¡¢´¦Àí½á¹û¼¯
+			//5ã€å¤„ç†ç»“æœé›†
 			while(rs.next()){
-				System.out.println("IDÎª:"+rs.getLong(1));
-				System.out.println("Ãû×ÖÎª:"+rs.getString(2));
+				System.out.println("IDä¸º:"+rs.getLong(1));
+				System.out.println("åå­—ä¸º:"+rs.getString(2));
 				System.out.println();
 			}
 		} catch (ClassNotFoundException e) {
@@ -58,7 +58,7 @@ public class FirstJDBC {
 			e.printStackTrace();
 		}finally {
 			try {
-				//6¡¢¹Ø±ÕJDBC¶ÔÏó(Ë³Ğò·´×ÅÀ´)
+				//6ã€å…³é—­JDBCå¯¹è±¡(é¡ºåºåç€æ¥)
 				if(rs!=null)rs.close();
 				if(stm!=null)stm.close();
 				if(pstm!=null)pstm.close();
