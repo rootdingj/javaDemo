@@ -1,5 +1,7 @@
 package com.concurrency.ch02;
 
+import org.junit.Test;
+
 public class VolatileTest {
 
 	boolean status = false;
@@ -26,6 +28,7 @@ public class VolatileTest {
      * @Description: 并发计算
      * @throws InterruptedException 
      */ 
+    @Test
      private void concurrency() throws InterruptedException {
          Thread t1 = new Thread(new Runnable() {
              @Override
@@ -34,13 +37,23 @@ public class VolatileTest {
              }
          });
          t1.start();
+         
+         //输出 running....
+         /*Thread t2 = new Thread(new Runnable() {
+             @Override
+             public void run() {
+            	 running();
+             }
+         });
+         t2.start();*/
+         // 输出 changeStatus....
          running();
+         
      }
 
 	public static void main(String[] args) throws InterruptedException {
 		VolatileTest test = new VolatileTest();
 		test.concurrency();
-		
 		
 	}
 
