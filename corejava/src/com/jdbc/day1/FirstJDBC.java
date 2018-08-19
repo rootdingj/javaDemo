@@ -20,7 +20,6 @@ public class FirstJDBC {
 		Statement stm = null;
 		ResultSet rs = null;
 		PreparedStatement pstm = null;
-		
 		try {
 			//1、注册驱动(oracle驱动) 
 			/*OracleDriver:ojdbc14.jar中的一个类,这一类类由jdbc使用，不由程序员使用;

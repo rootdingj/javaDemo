@@ -20,15 +20,14 @@ public class CommJDBC {
 		
 		try {
 			//1、加载驱动程序(oracle驱动) 
-				//1
 //			Class.forName("oracle.jdbc.OracleDriver");
-				//2
+			//2
 			OracleDriver driver = new OracleDriver();
 			DriverManager.registerDriver(driver);
-				//3、VM arguments
+			//3、VM arguments
 			//-D:系统运行变量
-			//-Djdbc.drivers=oracle.jdbc.OracleDriver
-				//4、使用高版本的jdbc
+//			-Djdbc.drivers=oracle.jdbc.OracleDriver
+			//4、使用高版本的jdbc
 			//2、建立连接
 			conn = DriverManager.getConnection(url, user, password);
 			System.out.println(conn);
