@@ -9,14 +9,14 @@ import java.util.Map;
 import java.util.Map.Entry;
 
 /** 
- * @ClassName TreeUtil  
+ * @ClassName AVLTree  
  * @Description 平衡二叉树工具类 
  * @author dingj 
  * @date 2018年7月12日  
  *   
  */
 public class AVLTree {
-
+	
 	/** 
 	 * @Title: createTree 
 	 * @Description: 构建平衡二叉树</br>
@@ -28,11 +28,13 @@ public class AVLTree {
 	 * @return Node    返回类型
 	 */
 	public Node createTree(Node node, int from, int to) {
-		if (from < to)
+		if (from < to) {
 			return null;
+		}
 		node = new Node(from, to);
-		if (from == to)
+		if (from == to) {
 			return node;
+		}
 		int mid = to + ((from - to) >> 1);
 		node.setLeft(createTree(node.getLeft(), from, mid + 1));
 		node.setRight(createTree(node.getRight(), mid, to));

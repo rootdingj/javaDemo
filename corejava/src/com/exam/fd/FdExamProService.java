@@ -10,11 +10,14 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import com.exam.util.PropertiesUtil;
+import com.common.util.PropertiesUtil;
 
 public class FdExamProService {
-	
+	/** 评分区间范围值 */
+	private static int SCORE_SCOPE = 1000000;
+	/** 拆分文件个数 */
 	private static int SUB_FILE_NUM = 200;
+	/** 拆分零时文件相对路径 */
 	private static String TEMP_FILE_PATH = "temp";
 
 	/** 
@@ -63,7 +66,7 @@ public class FdExamProService {
 		while ((line = reader.readLine()) != null) {
 			String item[] = line.split(",");
 			int score = Integer.parseInt(item[1]);
-			int num = score / (1000000 / SUB_FILE_NUM);
+			int num = score / (SCORE_SCOPE / SUB_FILE_NUM);
 			list.get(num).write(line);
 			list.get(num).newLine();
 			list.get(num).flush();

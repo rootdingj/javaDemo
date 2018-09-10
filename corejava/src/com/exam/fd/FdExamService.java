@@ -13,9 +13,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
-import com.exam.util.PropertiesUtil;
+import com.common.util.PropertiesUtil;
 
 public class FdExamService {
+	private static int MIN_SCORE = 0;
+	private static int MAX_SCORE = 999999;
 	
 	/** 
 	 * @Title: getIdByReadCVS 
@@ -25,19 +27,21 @@ public class FdExamService {
 	 * @return Map<Integer,Integer>    返回类型
 	 */
 	public Map<Integer,Integer> getIdByReadCVS(String userId){
+		// 用户的序号
+		int seqNo = 0;
+		// 当前用户的评分
+		int rankScore = 0;
 		BufferedReader reader = null;
 		String line = null;  
-		int count = 0;
-		int rankScore = 0;
 		try {
 			reader = new BufferedReader(new FileReader(PropertiesUtil.getValue("readFilePath")));
             while((line=reader.readLine())!=null){  
-            	count++;
+            	seqNo++;
             	//CSV格式文件为逗号分隔符文件，这里根据逗号切分 
                 String item[] = line.split(",");
                 int score = Integer.parseInt(item[1]);
+                // 如果读取到的是当前指定用户ID，则暂存用户评分score
                 if(userId.equals(item[0])) {
-                	// 暂存 score
                 	rankScore = score; 
                 	break;
                 }
@@ -50,7 +54,7 @@ public class FdExamService {
 			e.printStackTrace();
 		}
 		HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
-		map.put(count,rankScore);
+		map.put(seqNo,rankScore);
 		return map;
 	}
 	
@@ -96,7 +100,7 @@ public class FdExamService {
 		int sum = 1;
 		System.out.println("--------- Top 100 的信用评分的用户  start ----------");
 		for (Map.Entry<String, Integer> entry : map.entrySet()) {
-			System.out.println("userId=" + entry.getKey() + " score=" + entry.getValue());
+			System.out.println("userId=" + entry.getKey() + ", score=" + entry.getValue());
 			sum++;
 			if(sum>100){
 				break;
@@ -108,7 +112,7 @@ public class FdExamService {
 	
 	/** 
 	 * @Title: getScoreByCount 
-	 * @Description: 信用评分重复次数最高的10个信用评分
+	 * @Description: 信用评分重复次数最高的10个信用评分（第三题）
 	 * @param tree
 	 * @param node 参数说明
 	 * @return void    返回类型
@@ -118,16 +122,14 @@ public class FdExamService {
 		map = tree.postOrderTraversal(node, map);
 		int sum = 1;
 		System.out.println("--------- 信用评分重复次数最高的10个信用评分 start ----------");
-		System.out.print("重复次数最高的10个信用评分为：");
+		System.out.println("重复次数最高的10个信用评分为：");
 		for (Map.Entry<String, Integer> entry : map.entrySet()) {
-			System.out.print("score="+entry.getKey()+",count"+entry.getValue());
+			System.out.println("分数："+entry.getKey()+", 重复次数："+entry.getValue());
 			sum++;
 			if(sum>10){
 				break;
 			}
-			System.out.print(", ");
 		}
-		System.out.println();
 		System.out.println("--------- 信用评分重复次数最高的10个信用评分 end ----------");
 	}
 	
@@ -138,46 +140,52 @@ public class FdExamService {
 	 * @return 参数说明
 	 * @return int    返回类型
 	 */
-	public void init(String userId){
-		int sum =0;
-		int rankScore =0;
-		int count = 0;
-		int temp = 0;
+	public void init(String userId) {
+		// 当前指定用户ID的序号
+		int seqNo = 0;
+		// 当前指定用户ID的评分
+		int rankScore = 0;
+		// 文件读取时用户ID对应的序号
+		int countNo = 0;
+		// 序号小于当前用户ID,并且评分和当前用户ID相同的用户个数
+		int countScore = 0;
+		//构建平衡二叉树
 		AVLTree tree = new AVLTree();
 		Node node = new Node();
-		node = tree.createTree(node, 999999, 0);
-		Map<Integer, Integer> map2 = getIdByReadCVS(userId);
-		for (Map.Entry<Integer, Integer> entry : map2.entrySet()) {
-			sum = entry.getKey();
+		node = tree.createTree(node, MAX_SCORE, MIN_SCORE);
+		//获取当前用户ID的序号和分数
+		Map<Integer, Integer> userMap = getIdByReadCVS(userId);
+		for (Map.Entry<Integer, Integer> entry : userMap.entrySet()) {
+			seqNo = entry.getKey();
 			rankScore = entry.getValue();
 		}
-		BufferedReader reader = null;
 		Map<String, Integer> oriMap = new LinkedHashMap<String, Integer>();
 		Map<String, Integer> sortMap = new HashMap<String, Integer>();
+		BufferedReader reader = null;
 		try {
 			reader = new BufferedReader(new FileReader(PropertiesUtil.getValue("readFilePath")));
-			String line = null;  
-            while((line=reader.readLine())!=null){  
-            	count++;
-                String item[] = line.split(",");
-                String uid = item[0];
-                int score = Integer.parseInt(item[1]);
-                tree.addNewScore(node, score);
-                if(count<sum&&score==rankScore){
-                	temp++;
-                }
-                oriMap.put(uid, score); 
-                sortMap = sortMapTop100(oriMap);
-                
-            }
-            // 第一题
-            int rank = tree.getRank(node,rankScore,1);
-            rank += temp; 
-            System.out.println(userId+" 的排名为： "+rank);
-            // 第二题
-            getUserIdByScoreTop100(sortMap);
-            // 第三题
-            getScoreByCount(tree, node);
+			String line = null;
+			while ((line = reader.readLine()) != null) {
+				countNo++;
+				String item[] = line.split(",");
+				int score = Integer.parseInt(item[1]);
+				tree.addNewScore(node, score);
+				// 实时保存Top 100信用评分的用户信息 
+				oriMap.put(item[0], score);
+				sortMap = sortMapTop100(oriMap);
+				// 统计 序号小于当前用户ID,并且评分和当前用户ID相同的用户个数
+				if (countNo < seqNo && score == rankScore) {
+					countScore++;
+				}
+			}
+			// 第一题
+			int rank = tree.getRank(node, rankScore, 1);
+			rank += countScore;
+			System.out.println(userId + " 的排名为： " + rank);
+			// 第二题
+			 getUserIdByScoreTop100(sortMap);
+			// 第三题
+			 getScoreByCount(tree, node);
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (NumberFormatException e) {
