@@ -1,7 +1,4 @@
 eclipse.preferences.version=1
-<<<<<<< HEAD
-encoding/src=gbk
-=======
+encoding/src=UTF-8
 encoding//resource/config.properties=UTF-8
 encoding/src=UTF-8
->>>>>>> refs/heads/feature_exam
