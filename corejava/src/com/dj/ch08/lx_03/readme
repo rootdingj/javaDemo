@@ -1,6 +1,0 @@
-
-使用TreeSet和Comparator,写TreeSetTestInner
-要求：
-对TreeSet中的元素"HashSet"、"ArrayList"、"TreeMap"、"HashMap"、"TreeSet"、"LinkedList"进行升序和倒序排列
-1. 使用匿名内部类实现
-2. 使用静态内部类实现

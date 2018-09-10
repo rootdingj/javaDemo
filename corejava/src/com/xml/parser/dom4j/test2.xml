@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-
-<student school="江西理工" position="江西">
-        <student>
-                <name gender="male">丁进</name>
-                <age>22</age>
-        </student>
-</student>
