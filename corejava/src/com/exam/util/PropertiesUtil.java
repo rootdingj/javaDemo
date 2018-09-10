@@ -30,4 +30,8 @@ public class PropertiesUtil {
 		return properties.getProperty(key);
 	}
 	
+	public static void main(String[] args) {
+		System.out.println(getValue("readFilePath"));
+	}
+	
 }
