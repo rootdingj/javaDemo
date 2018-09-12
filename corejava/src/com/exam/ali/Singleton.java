@@ -1,26 +1,30 @@
 package com.exam.ali;
 
 public class Singleton {
+	
+	// 使用volatile关键字保其可见性(轻量级)
+	private volatile static Singleton instance = null;
 
-	public Singleton() {
-	}
-
-	/**
-	 * 内部静态类实现单例
-	 */
-	private static class SingletonHolder {
-		private static final Singleton INSTANCE = new Singleton();
-	}
-
+	public Singleton() {}
+	
 	public static Singleton getInstance() {
-		return SingletonHolder.INSTANCE;
-	}
-
-	public static void main(String[] args) {
-		assert true;
-		// 测试代码，验证50个线程去获取单例是不是一个实例
-		for (int i = 0; i < 50; i++) {
-			new Thread(() -> System.out.println(Singleton.getInstance().hashCode())).start();
+		if(instance != null) {
+			// 不创建
+		}else {
+			//创建实例之前可能会有一些准备性的耗时工作 
+			try {
+				Thread.sleep(300);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+			synchronized (Singleton.class) {
+				// 二次检查，以保证其不被重复实例化.
+				if(instance == null) {
+					instance = new Singleton();
+				}
+			}
 		}
+		return instance;
 	}
+	
 }
