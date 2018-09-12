@@ -7,5 +7,6 @@ corejava各分支说明：
   feature_exam：笔试题、编程练习题分支--com.exam
   feature_source：源码分析、练习、测试分支--com.source
   feature_dataStructure：数据结构与算法练习分支-com.ds
+  feature_patterns：设计模式练习分支-com.patterns
   
   
