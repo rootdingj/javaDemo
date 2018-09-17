@@ -1,4 +1,4 @@
-package com.source.pack_long;
+package com.source.plong;
 
 import java.lang.reflect.Field;
 
@@ -11,8 +11,9 @@ public class StringTest {
 	 * @return void    返回类型
 	 */
 	public static void strIschangeTest() {
-		String str = "hello test";
-		System.out.println(str);
+//		String str = "Hello Test";	// 可变（final: 构造器常量）
+		final String str = "hello test"; // 不可变（final: 编译期常量）
+		System.out.println("str1: "+str);
 		try {
 			Field field = String.class.getDeclaredField("value");
 			field.setAccessible(true);
@@ -21,9 +22,7 @@ public class StringTest {
 			value[7] = 'a';
 			value[8] = 'v';
 			value[9] = 'a';
-			value[10] = '!';
-			value[11] = '!';
-			System.out.println(str);
+			System.out.println("str2: "+str);
 		} catch (NoSuchFieldException e) {
 			e.printStackTrace();
 		} catch (SecurityException e) {
@@ -36,7 +35,8 @@ public class StringTest {
 	}
 
 	public static void main(String[] args) {
-
+		strIschangeTest();
+		
 	}
 
 }

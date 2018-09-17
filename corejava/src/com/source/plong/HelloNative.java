@@ -1,4 +1,4 @@
-package com.source.pack_long;
+package com.source.plong;
 
 public class HelloNative {
 	
