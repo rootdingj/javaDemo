@@ -134,12 +134,14 @@ class MyComparator2 implements Comparator{
 		else if(type1<type2)
 			return 1;
 		else
-			if(type1==0){ //偶数降序排列
+			//偶数降序排列
+			if(type1==0){ 
 				if(num1>num2)
 					return 1;
 				else if(num1<num2)
 					return -1;
-			}else if(type1==1){ //奇数升序排列
+				//奇数升序排列
+			}else if(type1==1){ 
 				if(num1>num2)
 					return -1;
 				else if(num1<num2)

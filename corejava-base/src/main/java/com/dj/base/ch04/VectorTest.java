@@ -11,7 +11,7 @@ public class VectorTest {
 		Collection<Integer> c = new Vector<Integer>();
 		Queue<String> q = new LinkedList();
 		PriorityQueue<String> qq = new PriorityQueue();
-/*		q.offer("dj1");
+		q.offer("dj1");
 		q.offer("dj2");
 		q.offer("dj3");
 		System.out.println(q);
@@ -21,7 +21,7 @@ public class VectorTest {
 		while(q.size()>0){
 			System.out.print(q.remove()+"\t");
 		}
-		System.out.println(q);*/
+		System.out.println(q);
 	   qq.offer("dd1");
 	   qq.offer("dd2");
 	   qq.offer("dd3");

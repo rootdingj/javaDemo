@@ -13,19 +13,19 @@ public class SetListPerformanceTest {
 
 	public static void main(String[] args) {
 		Collection<Integer> hashSet = new HashSet<Integer>();
-		System.out.println("hashset"+getTestTime(hashSet,100000)+"������");
+		System.out.println("hashset"+getTestTime(hashSet,100000)+"毫秒数");
 		
 		Collection<Integer> linkedhashSet = new LinkedHashSet();
-		System.out.println("linkedhashSet"+getTestTime(linkedhashSet,100000)+"������");
+		System.out.println("linkedhashSet"+getTestTime(linkedhashSet,100000)+"毫秒数");
 		
 		Collection<Integer> treeSet = new TreeSet();
-		System.out.println("treeSet"+getTestTime(treeSet,100000)+"������");
+		System.out.println("treeSet"+getTestTime(treeSet,100000)+"毫秒数");
 		
 		Collection<Integer> arraylist = new ArrayList();
-		System.out.println("arraylist"+getTestTime(arraylist,100000)+"������");
+		System.out.println("arraylist"+getTestTime(arraylist,100000)+"毫秒数");
 		
 		Collection<Integer> linkedlist = new LinkedList();
-		System.out.println("linkedlist"+getTestTime(linkedlist,100000)+"������");
+		System.out.println("linkedlist"+getTestTime(linkedlist,100000)+"毫秒数");
 		
 	}
 		

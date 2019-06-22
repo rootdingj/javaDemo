@@ -16,12 +16,10 @@ public class TreeSetTest {
 				return 0;
 			}
 		};
-
 		Collection c = new TreeSet(t);
-		/*
-		 * c.add("dj1"); c.add("dj2"); c.add("dj3");
-		 */
-
+		c.add("dj1");
+		c.add("dj2");
+		c.add("dj3");
 		Student stu1 = new Student(11L, "dj1");
 		Student stu2 = new Student(12L, "dj2");
 		Student stu3 = new Student(13L, "dj3");
@@ -32,21 +30,17 @@ public class TreeSetTest {
 		c.add(stu3);
 		c.add(stu4);
 		c.add(stu5);
-
 		for (Object o : c) {
 			System.out.println(o);
 		}
-
 //		System.out.println(c.contains(""));
 //		System.out.println(c.size());
 //		System.out.println(c.remove("dj1"));
+		Object[] o1 = c.toArray();
+		System.out.println(Arrays.toString(o1));
+		String[] str = (String[]) c.toArray(new String[c.size()]);
+		System.out.println(Arrays.toString(str));
 
-		/*
-		 * Object[] o1 = c.toArray(); System.out.println(Arrays.toString(o1));
-		 * 
-		 * String[] str = (String[])c.toArray(new String[c.size()]);
-		 * System.out.println(Arrays.toString(str));
-		 */
 	}
 }
 
