@@ -8,10 +8,10 @@ package com.dj.pattern.singleton;
     *
  */
 public enum EnumSingleton implements SingletonInterface {
-	INSTANCE {
+	INSTANCE { 
         @Override
         public void doSomething() {
-            System.out.println("complete singleton");
+            System.out.println("EnumSingleton singleton");
         }
     };
 
