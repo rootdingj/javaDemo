@@ -11,7 +11,7 @@ package com.dj.pattern.singleton;
  */
 public class LazyDoubleCheckSingleton {
 
-	// volatile 可以禁止 JVM 的指令重排，保证在多线程环境下也能正常运行
+	// volatile：保证了不同线程对变量进行操作时的可见性，可以禁止 JVM 的指令重排序
 	private static volatile LazyDoubleCheckSingleton uniqueInstance = null;
 
 	private LazyDoubleCheckSingleton() {

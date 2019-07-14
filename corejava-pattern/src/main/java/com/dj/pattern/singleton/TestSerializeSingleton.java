@@ -8,10 +8,10 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
-public class TestStaticInnerSingleton {
+public class TestSerializeSingleton {
 
 	public static void main(String[] args) {
-		StaticInnerSingleton singleton = StaticInnerSingleton.getInstance();
+		SerializeSingleton singleton = SerializeSingleton.getInstance();
 		File file = new File("MySingleton.txt");
 		FileOutputStream fos = null;
 		ObjectOutputStream oos = null;
@@ -22,13 +22,13 @@ public class TestStaticInnerSingleton {
 			fos = new FileOutputStream(file);
 			oos = new ObjectOutputStream(fos);
 			oos.writeObject(singleton);
-			System.out.println(singleton.hashCode());
+			System.out.println("序列化 hashCode: "+singleton.hashCode());
 			
 			// 反序列化
 			fis = new FileInputStream(file);
 			ois = new ObjectInputStream(fis);
-			StaticInnerSingleton rSingleton = (StaticInnerSingleton) ois.readObject();
-			System.out.println(rSingleton.hashCode());
+			SerializeSingleton rSingleton = (SerializeSingleton) ois.readObject();
+			System.out.println("反序列化 hashCode: "+rSingleton.hashCode());
 		} catch (FileNotFoundException e) { 
 			e.printStackTrace();
 		} catch (IOException e) { 
