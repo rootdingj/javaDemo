@@ -18,7 +18,7 @@ public class LazyDoubleCheckSingleton {
 
 	}
 
-	public static LazyDoubleCheckSingleton getUniqueInstance() {
+	public static LazyDoubleCheckSingleton getInstance() {
 		// 第一次检查，用来避免 uniqueInstance 已经被实例化之后的加锁操作
 		if (uniqueInstance != null) {
 			// 不创建

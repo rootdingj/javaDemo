@@ -16,7 +16,7 @@ public class LazySingleton {
 
 	}
 
-	public static LazySingleton getUniqueInstance() {
+	public static LazySingleton getInstance() {
 		// 如果多个线程能够同时进入，将导致实例化多次 uniqueInstance
 		if (uniqueInstance == null) {
 			uniqueInstance = new LazySingleton();
