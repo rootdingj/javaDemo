@@ -18,7 +18,7 @@ public class Solution {
 		}
 	}
 
-	public int rob(int[] nums) {
+	public static int rob(int[] nums) {
 		if (nums.length == 0)
 			return 0;
 		if (nums.length == 1)
@@ -61,9 +61,11 @@ public class Solution {
 
 	public static void main(String[] args) {
 //		System.out.println(getSum(1, 2));
-
+		
 		int[] nums1 = { 4, 9, 5 };
 		int[] nums2 = { 9, 4, 9, 8, 4 };
+		System.out.println(rob(nums2));
+		
 		int[] results = intersect(nums1, nums2);
 		for (int i : results) {
 			System.out.println(i);
