@@ -1,4 +1,4 @@
-package com.dj.pattern.factoryMethod;
+package com.dj.pattern.simpleFactory;
 
 /**
  * 
