@@ -1,5 +1,6 @@
 package com.dj.pattern.adapter;
 
+//类适配器，通过组合方式，把适配者接口转换成目标接口
 public class ObjectAdapter implements Target {
 
 	private Adaptee adaptee;
@@ -10,7 +11,7 @@ public class ObjectAdapter implements Target {
 
 	@Override
 	public void request() {
-		adaptee.specificRequest();
+		adaptee.concreteRequest();
 	}
 
 }
