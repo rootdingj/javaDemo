@@ -1,6 +1,6 @@
 package com.dj.pattern.bridge;
 
-// 具体实现类
+// 具体实现类A
 public class ConcreteImplementorA implements Implementor {
 
 	@Override
