@@ -1,5 +1,6 @@
 package com.dj.pattern.composite.open;
 
+// 叶子节点
 public class Leaf implements Component {
 	
 	private String name;
