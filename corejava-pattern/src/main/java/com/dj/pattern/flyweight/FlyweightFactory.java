@@ -5,16 +5,16 @@ import java.util.HashMap;
 // 享元工厂类
 public class FlyweightFactory {
 
-	private HashMap<String, Flyweight> map = new HashMap<String, Flyweight>(16);
+	private HashMap<String, Flyweight> cachePool = new HashMap<String, Flyweight>(16);
 
-	public Flyweight getFlyweight(String key) {
+	public Flyweight getFlyweight(String intrinsicState) {
 		Flyweight flyweight = null;
-		if (map.containsKey(key)) {
-			flyweight = map.get(key);
-			System.out.println("已存在享元对象，直接返回，key=" + key);
+		if (cachePool.containsKey(intrinsicState)) {
+			flyweight = cachePool.get(intrinsicState);
+			System.out.println("已存在享元对象直接获取，内部状态为" + intrinsicState);
 		} else {
-			flyweight = new ConcreteFlyweight(key);
-			map.put(key, flyweight);
+			flyweight = new ConcreteFlyweight(intrinsicState);
+			cachePool.put(intrinsicState, flyweight);
 		}
 		return flyweight;
 	}
