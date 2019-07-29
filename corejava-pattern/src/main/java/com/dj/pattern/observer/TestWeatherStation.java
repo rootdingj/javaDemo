@@ -1,5 +1,6 @@
 package com.dj.pattern.observer;
 
+// 测试客户端
 public class TestWeatherStation {
 
 	public static void main(String[] args) {
