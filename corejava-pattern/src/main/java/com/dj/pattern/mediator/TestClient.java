@@ -1,5 +1,6 @@
 package com.dj.pattern.mediator;
 
+// 测试客户端
 public class TestClient {
 
 	public static void main(String[] args) {
