@@ -9,7 +9,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.TreeSet;
 
-public class SetListPerformanceTest {
+public class SetListTest {
 
 	public static void main(String[] args) {
 		Collection<Integer> hashSet = new HashSet<Integer>();

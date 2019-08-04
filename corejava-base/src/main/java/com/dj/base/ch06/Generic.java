@@ -3,8 +3,8 @@ package com.dj.base.ch06;
 public class Generic<T> {
 	private T key;
 
-	public <E> void genericMethod(T t) {
-		System.out.println(t.toString());
+	public <E> void genericMethod(E e) {
+		// TODO
 	}
 
 	public Generic(T key) {
