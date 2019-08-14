@@ -1,7 +1,5 @@
 package com.dj.pattern.singleton;
 
-import org.junit.jupiter.api.Test;
-
 public class TestThread extends Thread {
 
 	@Override
@@ -22,10 +20,11 @@ public class TestThread extends Thread {
 		for (int j = 0; j < thread.length; j++) {
 			thread[j].start();
 		}
+		
+		testRuntime();
 	}
 	
-	@Test
-	public void testRuntime() {
+	public static void testRuntime() {
 		Runtime r1 = Runtime.getRuntime();  
 		Runtime r2 = Runtime.getRuntime();  
 		//“==”为地址判断，为true表示：r1与r2指向同一对象。  
