@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * 
  * @ClassName: RuntimeConstantPoolOOM
- * @Description: 运行时常量池内存溢出，注意不同版本JDK运行时常量池的位置
+ * @Description: 运行时常量池内存溢出， 不同版本JDK运行时常量池的位置
  * @author Steven
  * @date 2020年7月23日 
  * VM Args: -XX:PermSize=10M -XX:MaxPermSize=10M
