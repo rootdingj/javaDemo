@@ -1,11 +1,20 @@
 package com.dj.corejava.juc.base;
 
+/**
+ * 安全的线程中断
+ * 
+ * @author Steven
+ * @date 2020/08/09
+ */
 public class SafeInterruptDemo extends Thread {
 
+    /**
+     *  中断标志
+     */
     private boolean flag = false;
 
     /**
-        * 将需要中断的线程作为参数传过来用以进行中断
+     *  将需要中断的线程作为参数传过来用以进行中断
      * 
      * @param t
      */
@@ -27,7 +36,7 @@ public class SafeInterruptDemo extends Thread {
             try {
                 synchronized (this) {
                     if (i > 3) {
-                         Thread.sleep(1000 * 60);
+                        Thread.sleep(1000 * 60);
                         wait();
                     }
                 }
@@ -35,7 +44,6 @@ public class SafeInterruptDemo extends Thread {
                 e.printStackTrace();
             }
         }
-
     }
 
     public static void main(String[] args) throws InterruptedException {
@@ -44,5 +52,4 @@ public class SafeInterruptDemo extends Thread {
         Thread.sleep(1000L);
         demo.cancel(demo);
     }
-
 }
