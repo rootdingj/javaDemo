@@ -52,7 +52,6 @@ public class CooperationDemo1 {
         CooperationDemo1 demo = new CooperationDemo1();
         new Thread(demo.new EvenTask()).start();
         new Thread(demo.new OddTask()).start();
-
     }
 
 }
