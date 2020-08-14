@@ -1,6 +1,6 @@
  package com.dj.corejava.juc.base;
 
- public class CooperationDemo2 {
+ public class CooperationWaitNotify {
      
      private int number = 10;
      private final Object numberLock = new Object();
@@ -40,7 +40,7 @@
      }
      
     public static void main(String[] args) {
-        CooperationDemo2 demo = new CooperationDemo2();
+        CooperationWaitNotify demo = new CooperationWaitNotify();
         new Thread(demo.new EvenTask()).start();
         new Thread(demo.new OddTask()).start();
 

@@ -4,7 +4,7 @@ import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
-public class CooperationDemo1 {
+public class CooperationCondition {
 
     private int number = 10;
     private Lock lock = new ReentrantLock();
@@ -49,7 +49,7 @@ public class CooperationDemo1 {
     }
 
     public static void main(String[] args) {
-        CooperationDemo1 demo = new CooperationDemo1();
+        CooperationCondition demo = new CooperationCondition();
         new Thread(demo.new EvenTask()).start();
         new Thread(demo.new OddTask()).start();
     }
