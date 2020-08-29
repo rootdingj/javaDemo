@@ -21,7 +21,7 @@
 		<jdk.version>1.8</jdk.version>
 		<junit.version>4.12</junit.version>
 		<slf4j.version>1.7.30</slf4j.version>
-		<zookeeper.version>3.4.7</zookeeper.version>
+		<zookeeper.version>3.4.8</zookeeper.version>
 		<zkclient.version>0.11</zkclient.version>
 		<curator.version>4.2.0</curator.version>
 	</properties>
@@ -41,7 +41,7 @@
 				<artifactId>slf4j-log4j12</artifactId>
 				<version>${slf4j.version}</version>
 			</dependency>
-			<!-- zk的3种java客户端框架 start-->
+			<!-- zk的3种java客户端框架 start -->
 			<dependency>
 				<groupId>org.apache.zookeeper</groupId>
 				<artifactId>zookeeper</artifactId>
@@ -62,8 +62,8 @@
 				<artifactId>curator-recipes</artifactId>
 				<version>${curator.version}</version>
 			</dependency>
-			<!-- zk的3种java客户端框架 end-->
-			
+			<!-- zk的3种java客户端框架 end -->
+
 		</dependencies>
 	</dependencyManagement>
 
