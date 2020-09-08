@@ -9,6 +9,7 @@
 	<packaging>pom</packaging>
 
 	<modules>
+		<module>corejava-common</module>
 		<module>corejava-base</module>
 		<module>corejava-exam</module>
 		<module>corejava-jvm</module>
