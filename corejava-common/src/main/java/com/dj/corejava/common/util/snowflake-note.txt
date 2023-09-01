@@ -1,5 +1,4 @@
-FROM https://mp.weixin.qq.com/s?src=11&timestamp=1599545046&ver=2571&signature=ja0Vqu6wkSzgNwcboNg-EJWvsRBnwQMJg*GWJNEYbyH4qNGN6Ht6EkJkT-pJhleX5uqmbiBacneHOxRSuImFMFk2JEtwZ*kWEVemEzcN4ln7sWAawZSFlmackk00kAe6&new=1
-
+雪花算法 分布式ID生成器
 SnowFlake所生成的ID一共分成四部分：
 	第一位:占用1bit，其值始终是0，没有实际作用。
 	

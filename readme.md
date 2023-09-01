@@ -1,4 +1,4 @@
-corejava 练习
+Java Demo Pepositorie
 ====================
 - corejava-base ：Java 基础练习
 - corejava-jvm ：Java 虚拟机练习
