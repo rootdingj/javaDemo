@@ -1,8 +1,12 @@
 package com.dj.jvm.bytecode;
 
-public class TestNaN {
+public class TestArithmetic {
 
     public static void main(String[] args) {
+
+    }
+
+    public void naNTest(){
         int i = 10;
         double j = i / 0.0;
         System.out.println(j);// Infinity:无穷大
