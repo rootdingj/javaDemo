@@ -19,8 +19,8 @@ Java 字节码技术案例
   - 指定目录下，执行 `javap` 指令，``javap -c HelloByteCode`` 或 ``javap -c HelloByteCode.class``进行反反汇编, 获取字节码清单：
       ```text
       Compiled from "HelloByteCode.java"
-      public class com.dj.jvm.bytecode.HelloByteCode {
-        public com.dj.jvm.bytecode.HelloByteCode();
+      public class bytecode.com.jvm.HelloByteCode {
+        public bytecode.com.jvm.HelloByteCode();
             Code:
             0: aload_0
             1: invokespecial #1                  // Method java/lang/Object."<init>":()V
@@ -37,9 +37,9 @@ Java 字节码技术案例
       ```
   - `HelloByteCode` 字节码解读
     ```text
-      public class com.dj.jvm.bytecode.HelloByteCode {
+      public class bytecode.com.jvm.HelloByteCode {
         // 默认的无参构造方法
-        public com.dj.jvm.bytecode.HelloByteCode();
+        public bytecode.com.jvm.HelloByteCode();
             Code:
             0: aload_0
             // 构造方法调用 super 类（Object）的构造方法进行初始化
@@ -61,7 +61,7 @@ Java 字节码技术案例
         Last modified 2023年9月2日; size 460 bytes
         MD5 checksum 7e595600f53870de0ca4dc3e4e61ebef
         Compiled from "HelloByteCode.java"
-        public class com.dj.jvm.bytecode.HelloByteCode
+        public class bytecode.com.jvm.HelloByteCode
            // jdk版本 55.0 --> 11.0javap
            minor version: 0
            major version: 55
@@ -96,7 +96,7 @@ Java 字节码技术案例
            #21 = Utf8               java/lang/Object
        {
            // 默认的无参构造方法
-           public com.dj.jvm.bytecode.HelloByteCode();
+           public bytecode.com.jvm.HelloByteCode();
              descriptor: ()V
              flags: (0x0001) ACC_PUBLIC
              Code:

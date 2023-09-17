@@ -1,4 +1,4 @@
-package com.dj.jvm.oom;
+package com.jvm.oom;
 
 /**
  * 

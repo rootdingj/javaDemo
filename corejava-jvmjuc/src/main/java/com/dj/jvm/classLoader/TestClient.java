@@ -1,4 +1,4 @@
- package com.dj.jvm.classLoader;
+ package com.jvm.classLoader;
 
  public class TestClient {
 

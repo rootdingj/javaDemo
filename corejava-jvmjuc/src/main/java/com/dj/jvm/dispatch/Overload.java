@@ -1,4 +1,4 @@
-package com.dj.jvm.dispatch;
+package com.jvm.dispatch;
 
 import java.io.Serializable;
 

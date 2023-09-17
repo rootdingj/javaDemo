@@ -1,4 +1,4 @@
-package com.dj.jvm.bytecode;
+package com.jvm.bytecode;
 
 public class HelloByteCode {
 
