@@ -1,4 +1,4 @@
-package com.jvm.oom;
+package com.dj.jvm.oom;
 
 import java.util.ArrayList;
 import java.util.List;

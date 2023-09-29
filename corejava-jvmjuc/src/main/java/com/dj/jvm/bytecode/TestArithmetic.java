@@ -1,4 +1,4 @@
-package com.jvm.bytecode;
+package com.dj.jvm.bytecode;
 
 public class TestArithmetic {
 

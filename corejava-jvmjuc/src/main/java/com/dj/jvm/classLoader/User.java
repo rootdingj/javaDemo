@@ -1,4 +1,4 @@
-package com.jvm.classLoader;
+package com.dj.jvm.classLoader;
 
 /**
  * 用户类

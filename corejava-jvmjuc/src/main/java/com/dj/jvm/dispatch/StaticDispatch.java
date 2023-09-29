@@ -1,4 +1,4 @@
- package com.jvm.dispatch;
+ package com.dj.jvm.dispatch;
 
  /**
   * 静态分派测试
